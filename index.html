@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Game Tester Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0e0e11;
+            color: #fff;
+        }
+        header {
+            background: #18181d;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #28282f;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #1a1a1f;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
+        .upload-btn {
+            display: block;
+            text-align: center;
+            background: #4c6ef5;
+            padding: 12px;
+            margin: 20px auto;
+            width: 250px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+        .upload-btn:hover {
+            background: #3557d8;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        .warning {
+            background: #ff4747;
+            color: white;
+            padding: 10px;
+            border-radius: 7px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Roblox Admin Game Testing Hub
+</header>
+
+<div class="container">
+    <div class="warning">
+        ⚠ Only Official Admins Can Test Submitted Games
+    </div>
+
+    <h2>Submit Your Game PowerShell Data</h2>
+    <p>Paste your extracted PowerShell game data below. After submission, ONLY Roblox certified admins can review it.</p>
+
+    <textarea id="data" placeholder="Paste here..." style="width:100%;height:180px;border-radius:8px;border:none;padding:10px;background:#0e0e11;color:white;font-size:15px;"></textarea>
+    
+    <a href="#" class="upload-btn" onclick="uploadData()">Submit Game</a>
+
+    <p id="status" style="text-align:center;font-size:15px;margin-top:10px;"></p>
+</div>
+
+<footer>
+    © Roblox Game Testing Network | Secure System | 2025
+</footer>
+
+<script>
+function uploadData(){
+    const text = document.getElementById("data").value;
+    if(text.trim() === ""){
+        document.getElementById("status").innerHTML = "❌ Please paste your PowerShell data.";
+        return;
+    }
+    document.getElementById("status").innerHTML = "✔ Submitted successfully! Admins will review it.";
+}
+</script>
+
+</body>
+</html>
